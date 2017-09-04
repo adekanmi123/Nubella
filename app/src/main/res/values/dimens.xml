@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="large_text">@dimen/_15sdp</dimen>
+    <dimen name="medium_text">@dimen/_13sdp</dimen>
+    <dimen name="small_text">@dimen/_10sdp</dimen>
+
+</resources>

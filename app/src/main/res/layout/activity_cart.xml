@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:geekui="http://schemas.android.com/tools">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/muted_white"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            >
+
+
+          <include layout="@layout/tool_bar"/>
+
+
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/reycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginBottom="@dimen/_40sdp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/colorPrimary"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_gravity="center">
+
+
+            <views.textview.TypefaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Total (5 Item) : "
+                android:textColor="@color/colorPrimary"
+                geekui:customTypeface="fonts/CoreSansDRegular.otf"
+                android:textSize="@dimen/medium_text"
+                android:gravity="center|left"/>
+
+        <views.textview.TypefaceTextView
+            android:id="@+id/txt_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            geekui:customTypeface="fonts/CoreSansDBold.otf"
+            android:textSize="@dimen/medium_text"
+            android:gravity="center|left"/>
+
+
+        </LinearLayout>
+
+        <views.textview.TypefaceTextView
+            android:id="@+id/txt_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="CHECKOUT"
+            android:textColor="@color/muted_white"
+            geekui:customTypeface="fonts/CoreSansDBold.otf"
+            android:textSize="@dimen/medium_text"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:elevation="@dimen/_5sdp"
+            android:background="@drawable/primary_filled_round_corner"/>
+
+
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
+
+</LinearLayout>

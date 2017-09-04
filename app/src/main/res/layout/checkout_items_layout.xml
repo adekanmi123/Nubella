@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:geekui="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:src="@drawable/watch_product"
+                android:padding="@dimen/_10sdp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0.6"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+          <views.textview.TypefaceTextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Timex TW002E101 Analog Watch - For Men"
+              android:textColor="@color/colorPrimary"
+              geekui:customTypeface="fonts/CoreSansDBold.otf"
+              android:textSize="@dimen/medium_text"/>
+
+
+            <views.textview.TypefaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seller : Best Offers"
+                android:textColor="@color/muted_grey"
+                geekui:customTypeface="fonts/CoreSansDRegular.otf"
+                android:textSize="@dimen/small_text"
+                android:layout_marginTop="@dimen/_3sdp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_3sdp">
+
+                <views.textview.TypefaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Rs_symbol"
+                    android:textColor="@color/colorPrimary"
+                    geekui:customTypeface="fonts/CoreSansDBold.otf"
+                    android:textSize="@dimen/medium_text"/>
+
+                <views.textview.TypefaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4000"
+                    android:textColor="@color/colorPrimary"
+                    geekui:customTypeface="fonts/CoreSansDBold.otf"
+                    android:textSize="@dimen/medium_text"/>
+
+                <views.textview.TypefaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5000"
+                    android:textColor="@color/muted_grey"
+                    geekui:customTypeface="fonts/CoreSansDBold.otf"
+                    android:textSize="@dimen/small_text"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:background="@drawable/strike_back_text"/>
+
+                <views.textview.TypefaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="75 % OFF"
+                    android:textColor="@color/colorAccent"
+                    geekui:customTypeface="fonts/CoreSansDBold.otf"
+                    android:textSize="@dimen/medium_text"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                   />
+
+
+            </LinearLayout>
+
+
+                <views.textview.TypefaceTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery : Free (with in 4-7 days)"
+                    android:textColor="@color/muted_grey"
+                    geekui:customTypeface="fonts/CoreSansDRegular.otf"
+                    android:textSize="@dimen/small_text"
+                    android:layout_marginTop="@dimen/_3sdp"/>
+
+         </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/muted_grey"/>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+
+       <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/minus_rounde"
+            />
+
+
+        <views.textview.TypefaceTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:background="@drawable/grey_round_corner"
+            android:text="1"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"/>
+
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/plus_rounded"
+            />
+
+
+       </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:layout_gravity="center|right"
+            android:gravity="right">
+
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/ic_delete"
+            android:padding="@dimen/_5sdp"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/_5sdp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/muted_grey"/>
+
+
+</LinearLayout>

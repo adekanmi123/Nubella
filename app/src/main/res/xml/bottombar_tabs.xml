@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/ic_home"
+        title="Home" />
+    <tab
+        id="@+id/tab_listing"
+        icon="@drawable/ic_categories"
+        title="Product Listing" />
+    <tab
+        id="@+id/tab_cart"
+        icon="@drawable/ic_cart"
+        title="My Cart" />
+
+    <tab
+        id="@+id/tab_orders"
+        icon="@drawable/ic_order_history"
+        title="My Orders" />
+
+    <tab
+        id="@+id/tab_account"
+        icon="@drawable/ic_account"
+        title="My Account" />
+
+
+</tabs>

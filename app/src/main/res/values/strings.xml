@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Nubella</string>
+
+
+    <string name="large_text" tools:ignore="ReferenceType">@dimen/_18sdp</string>
+
+    <string name="Rs_symbol">\u20B9</string>
+    <string name="rs_text">\u20A8</string>
+
+</resources>

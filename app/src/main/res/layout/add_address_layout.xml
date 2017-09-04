@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:geekui="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/grey_round_corner"
+            android:padding="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_5sdp">
+
+            <views.textview.TypefaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="@color/muted_grey"
+                geekui:customTypeface="fonts/CoreSansDBold.otf"
+                android:textSize="@dimen/small_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/colorPrimary"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/grey_round_corner"
+            android:padding="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/_5sdp">
+
+            <views.textview.TypefaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:textColor="@color/muted_grey"
+                geekui:customTypeface="fonts/CoreSansDBold.otf"
+                android:textSize="@dimen/small_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/colorPrimary"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/grey_round_corner"
+            android:padding="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_5sdp">
+
+            <views.textview.TypefaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pincode"
+                android:textColor="@color/muted_grey"
+                geekui:customTypeface="fonts/CoreSansDBold.otf"
+                android:textSize="@dimen/small_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/colorPrimary"
+                android:inputType="number"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/grey_round_corner"
+            android:padding="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/_5sdp">
+
+            <views.textview.TypefaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Locality"
+                android:textColor="@color/muted_grey"
+                geekui:customTypeface="fonts/CoreSansDBold.otf"
+                android:textSize="@dimen/small_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/colorPrimary"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/grey_round_corner"
+        android:padding="@dimen/_5sdp"
+        android:layout_margin="@dimen/_5sdp">
+
+
+
+        <views.textview.TypefaceTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address (Area And Street)"
+            android:textColor="@color/muted_grey"
+            geekui:customTypeface="fonts/CoreSansDBold.otf"
+            android:textSize="@dimen/small_text"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textSize="@dimen/medium_text"
+            android:textColor="@color/colorPrimary"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/grey_round_corner"
+            android:padding="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_5sdp">
+
+            <views.textview.TypefaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City/District/Town"
+                android:textColor="@color/muted_grey"
+                geekui:customTypeface="fonts/CoreSansDBold.otf"
+                android:textSize="@dimen/small_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/grey_round_corner"
+            android:padding="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/_5sdp">
+
+            <views.textview.TypefaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="State"
+                android:textColor="@color/muted_grey"
+                geekui:customTypeface="fonts/CoreSansDBold.otf"
+                android:textSize="@dimen/small_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/colorPrimary"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/grey_round_corner"
+            android:padding="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_5sdp">
+
+            <views.textview.TypefaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Landmark (Optional)"
+                android:textColor="@color/muted_grey"
+                geekui:customTypeface="fonts/CoreSansDBold.otf"
+                android:textSize="@dimen/small_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/grey_round_corner"
+            android:padding="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/_5sdp">
+
+            <views.textview.TypefaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alternate Phone (Optional)"
+                android:textColor="@color/muted_grey"
+                geekui:customTypeface="fonts/CoreSansDBold.otf"
+                android:textSize="@dimen/small_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/colorPrimary"/>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/grey_round_corner"
+        android:padding="@dimen/_4sdp"
+        android:layout_margin="@dimen/_5sdp">
+
+        <views.textview.TypefaceTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address Type"
+            android:textColor="@color/muted_grey"
+            geekui:customTypeface="fonts/CoreSansDBold.otf"
+            android:textSize="@dimen/small_text"/>
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Home(All Day Delivery)"
+            android:theme="@style/MyRadioButton"
+            android:layout_marginLeft="@dimen/_5sdp"/>
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Work(Delivery Between 9AM-6PM)"
+            android:theme="@style/MyRadioButton"
+            android:layout_marginLeft="@dimen/_5sdp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_5sdp">
+
+
+        <views.textview.TypefaceTextView
+            android:id="@+id/txt_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SAVE AND DELIVER HERE"
+            android:textColor="@color/muted_white"
+            geekui:customTypeface="fonts/CoreSansDBold.otf"
+            android:textSize="@dimen/medium_text"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:elevation="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:background="@drawable/primary_filled_round_corner"/>
+
+        <views.textview.TypefaceTextView
+            android:id="@+id/txt_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="CANCEL"
+            android:textColor="@color/colorPrimary"
+            geekui:customTypeface="fonts/CoreSansDBold.otf"
+            android:textSize="@dimen/medium_text"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:elevation="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
