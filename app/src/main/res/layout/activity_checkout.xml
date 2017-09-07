@@ -32,12 +32,23 @@
     </android.support.design.widget.AppBarLayout>
 
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginBottom="@dimen/_40sdp">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
+        android:descendantFocusability="blocksDescendants"
         android:padding="@dimen/_5sdp">
 
       <android.support.v7.widget.CardView
@@ -174,6 +185,7 @@
                     android:src="@drawable/ic_check"/>
 
                 <views.textview.TypefaceTextView
+                    android:id="@+id/address_change"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/muted_grey"
@@ -200,6 +212,11 @@
             card_view:cardCornerRadius="4dp"
             android:layout_marginTop="@dimen/_5sdp"
             android:foreground="?attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -235,7 +252,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/muted_grey"
-                        android:text="1 Item"
+                        android:text="1 Item (Total 1000)"
                         android:layout_marginLeft="@dimen/_10sdp"
                         geekui:customTypeface="fonts/CoreSansDRegular.otf"
                         android:textSize="@dimen/small_text"
@@ -250,19 +267,70 @@
                     android:src="@drawable/ic_check"/>
 
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/grey_round_corner"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    >
+
                 <views.textview.TypefaceTextView
+                    android:id="@+id/summary_change"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/muted_grey"
-                    android:text="CHANGE"
-                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="SHOW"
                     geekui:customTypeface="fonts/CoreSansDRegular.otf"
                     android:textSize="@dimen/small_text"
-                    android:background="@drawable/grey_round_corner"
-                    android:padding="@dimen/_5sdp"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_9sdp"/>
+
+                </LinearLayout>
+
 
             </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_checkout_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_checkout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/_1sdp"-->
+                    <!--android:background="@color/colorPrimary"-->
+                    <!--android:layout_marginTop="@dimen/_5sdp"/>-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                <include layout="@layout/layout_price_details"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+          </LinearLayout>
+
 
 
         </android.support.v7.widget.CardView>
@@ -277,6 +345,13 @@
             card_view:cardCornerRadius="4dp"
             android:layout_marginTop="@dimen/_5sdp"
             android:foreground="?attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -326,6 +401,7 @@
                     android:src="@drawable/ic_check"/>
 
                 <views.textview.TypefaceTextView
+                    android:id="@+id/txt_pay_change"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/muted_grey"
@@ -340,6 +416,44 @@
             </LinearLayout>
 
 
+             <LinearLayout
+                 android:id="@+id/ll_pay_options"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_marginLeft="@dimen/_10sdp"
+                 android:layout_marginRight="@dimen/_10sdp"
+                 android:visibility="gone">
+
+
+                 <CheckBox
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:checked="true"
+                     android:text="Cash On Delivery"
+                     android:theme="@style/MyCheckBox"/>
+
+                 <CheckBox
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:checked="true"
+                     android:text="Paypal"
+                     android:theme="@style/MyCheckBox"/>
+
+                 <CheckBox
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:checked="true"
+                     android:text="Pay U Money"
+                     android:theme="@style/MyCheckBox"/>
+
+
+             </LinearLayout>
+
+
+
+            </LinearLayout>
+
         </android.support.v7.widget.CardView>
 
 
@@ -347,7 +461,19 @@
     </LinearLayout>
 
 
+   </ScrollView>
+
+    <views.textview.TypefaceTextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/muted_white"
+        android:text="CONTINUE"
+        android:textSize="@dimen/large_text"
+        android:gravity="center"/>
 
 
+    </FrameLayout>
 
 </LinearLayout>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:geekui="http://schemas.android.com/tools">
+    xmlns:geekui="http://schemas.android.com/apk/res-auto">
 
 
     <android.support.design.widget.AppBarLayout
@@ -36,13 +36,49 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="false"
+            android:layout_marginBottom="@dimen/_40sdp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:descendantFocusability="blocksDescendants">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/reycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_marginBottom="@dimen/_40sdp"/>
+      />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/muted_white"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="vertical">
+
+         <include layout="@layout/layout_price_details"/>
+
+
+
+        </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        </ScrollView>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -104,8 +140,6 @@
             android:gravity="center"
             android:elevation="@dimen/_5sdp"
             android:background="@drawable/primary_filled_round_corner"/>
-
-
 
     </LinearLayout>
 

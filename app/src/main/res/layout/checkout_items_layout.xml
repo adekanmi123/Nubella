@@ -3,14 +3,16 @@
     xmlns:geekui="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/muted_light_grey">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_80sdp"
         android:orientation="horizontal"
-        android:padding="@dimen/_5sdp">
+        android:padding="@dimen/_5sdp"
+        android:background="@color/muted_white">
 
 
         <LinearLayout
@@ -21,6 +23,7 @@
             >
 
             <ImageView
+                android:id="@+id/product_img"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_80sdp"
                 android:src="@drawable/watch_product"
@@ -43,18 +46,20 @@
                 android:orientation="vertical">
 
           <views.textview.TypefaceTextView
+              android:id="@+id/prod_name"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="Timex TW002E101 Analog Watch - For Men"
+              android:text=""
               android:textColor="@color/colorPrimary"
               geekui:customTypeface="fonts/CoreSansDBold.otf"
               android:textSize="@dimen/medium_text"/>
 
 
             <views.textview.TypefaceTextView
+                android:id="@+id/prod_seller"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Seller : Best Offers"
+                android:text=""
                 android:textColor="@color/muted_grey"
                 geekui:customTypeface="fonts/CoreSansDRegular.otf"
                 android:textSize="@dimen/small_text"
@@ -67,14 +72,7 @@
                 android:layout_marginTop="@dimen/_3sdp">
 
                 <views.textview.TypefaceTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Rs_symbol"
-                    android:textColor="@color/colorPrimary"
-                    geekui:customTypeface="fonts/CoreSansDBold.otf"
-                    android:textSize="@dimen/medium_text"/>
-
-                <views.textview.TypefaceTextView
+                    android:id="@+id/actual_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4000"
@@ -83,6 +81,7 @@
                     android:textSize="@dimen/medium_text"/>
 
                 <views.textview.TypefaceTextView
+                    android:id="@+id/total_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5000"
@@ -93,6 +92,7 @@
                     android:background="@drawable/strike_back_text"/>
 
                 <views.textview.TypefaceTextView
+                    android:id="@+id/cut_off_precent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="75 % OFF"
@@ -107,6 +107,7 @@
 
 
                 <views.textview.TypefaceTextView
+                    android:id="@+id/delivery_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Delivery : Free (with in 4-7 days)"
@@ -130,7 +131,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/muted_grey"/>
+        android:background="@color/muted_light_grey"/>
 
 
 
@@ -150,27 +151,37 @@
         android:layout_weight="1">
 
         <ImageView
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"
+            android:id="@+id/minus"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
             android:src="@drawable/minus_rounde"
             />
 
 
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="0.8"
+               android:background="@drawable/grey_round_corner"
+               android:padding="@dimen/_3sdp"
+               android:layout_marginLeft="@dimen/_5sdp"
+               android:layout_marginRight="@dimen/_5sdp">
+
         <views.textview.TypefaceTextView
+            android:id="@+id/items_count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.8"
-            android:background="@drawable/grey_round_corner"
             android:text="1"
             android:gravity="center"
-            android:padding="@dimen/_5sdp"
-            android:layout_marginLeft="@dimen/_5sdp"
-            android:layout_marginRight="@dimen/_5sdp"/>
+            android:textSize="@dimen/medium_text"/>
+
+           </LinearLayout>
 
 
         <ImageView
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"
+            android:id="@+id/plus"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
             android:src="@drawable/plus_rounded"
             />
 
@@ -186,8 +197,9 @@
 
 
         <ImageView
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"
+            android:id="@+id/remove_product"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
             android:background="@drawable/ic_delete"
             android:padding="@dimen/_5sdp"
             android:layout_gravity="center"
@@ -200,7 +212,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_1sdp"
+        android:layout_height="0.5dp"
         android:background="@color/muted_grey"/>
 
 

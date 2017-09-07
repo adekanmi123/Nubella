@@ -5,15 +5,15 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_width="@dimen/_80sdp"
-        android:layout_height="match_parent"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_45sdp"
         android:layout_gravity="center"
         android:src="@drawable/nubella_app_image"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_1sdp"
-        android:background="@color/colorPrimary"/>
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_1sdp"-->
+        <!--android:background="@color/colorPrimary"/>-->
 
 
 </LinearLayout>

@@ -8,13 +8,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.purplecommerce.nubella.Adapters.Checkout_Recycle_Adapter;
 
 public class CartActivity extends AppCompatActivity {
 
    RecyclerView recyclerView ;
-   TextView total_amount , checkout ;
+   TextView total_amount , checkout , pricetxt_withitems , product_total_price , delivery_price , payable_amount ;
 
 
     @Override
@@ -25,7 +26,12 @@ public class CartActivity extends AppCompatActivity {
 
         init();
 
-        total_amount.setText(getResources().getString(R.string.Rs_symbol)+"5000");
+        total_amount.setText(getResources().getString(R.string.Rs_symbol)+"5050");
+        pricetxt_withitems.setText("Price (5 Items)");
+        product_total_price.setText(getResources().getString(R.string.Rs_symbol)+"5000");
+        delivery_price.setText(getResources().getString(R.string.Rs_symbol)+"50");
+        payable_amount.setText(getResources().getString(R.string.Rs_symbol)+"5050");
+
 
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,8 +55,14 @@ public class CartActivity extends AppCompatActivity {
     private void init() {
 
         recyclerView = (RecyclerView)findViewById(R.id.reycler_view);
+        recyclerView.setNestedScrollingEnabled(false);
         total_amount = (TextView)findViewById(R.id.txt_total_amount);
         checkout = (TextView)findViewById(R.id.txt_checkout);
+
+        pricetxt_withitems = (TextView)findViewById(R.id.price_txt_items_count);
+        product_total_price = (TextView)findViewById(R.id.products_total);
+        delivery_price = (TextView)findViewById(R.id.delivery_total);
+        payable_amount = (TextView)findViewById(R.id.payable_total);
 
     }
 

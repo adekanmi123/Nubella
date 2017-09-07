@@ -2,61 +2,52 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
 
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBar"
+
+
+
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:weightSum="1">
-
-
-        <LinearLayout
-            android:id="@+id/llContainer"
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-
-            <ImageView
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"/>
-
-
-        </LinearLayout>
-
-
-
-        </android.support.v7.widget.Toolbar>
-
-    </android.support.design.widget.AppBarLayout>
-
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
 
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/myScrollingContent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <!-- Your loooooong scrolling content here. -->
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
 
 
+          </FrameLayout>
 
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
+
+    </FrameLayout>
+
+    <!--*/shy is used for hide bottom bar /*-->
 
     <com.roughike.bottombar.BottomBar
         android:id="@+id/bottomBar"
@@ -64,7 +55,7 @@
         android:layout_height="56dp"
         android:layout_gravity="bottom"
         app:bb_tabXmlResource="@xml/bottombar_tabs"
-        app:bb_behavior="shy"
+
         app:bb_inActiveTabAlpha="0.6"
         app:bb_activeTabAlpha="1"
         app:bb_inActiveTabColor="#222222"
@@ -73,4 +64,61 @@
         app:bb_showShadow="true"
         app:bb_titleTypeFace="fonts/CoreSansDRegular.otf"/>
 
+
+
+    <android.support.design.widget.AppBarLayout
+       android:id="@+id/appBar"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+          >
+
+
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/muted_white"
+            app:layout_scrollFlags="snap"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            >
+
+
+            <FrameLayout
+                android:id="@+id/llContainer"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                >
+
+                <include layout="@layout/tool_bar"/>
+
+
+
+            </FrameLayout>
+
+
+
+
+
+        </android.support.v7.widget.Toolbar>
+
+        <com.miguelcatalan.materialsearchview.MaterialSearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            />
+
+    </FrameLayout>
+
+</android.support.design.widget.AppBarLayout>
+
+
 </android.support.design.widget.CoordinatorLayout>
+
+

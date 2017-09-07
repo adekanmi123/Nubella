@@ -3,14 +3,20 @@ package com.purplecommerce.nubella.Adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.purplecommerce.nubella.R;
 
 import java.util.ArrayList;
@@ -28,20 +34,24 @@ public class Checkout_Recycle_Adapter extends RecyclerView.Adapter<Checkout_Recy
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView date, name, msg;
-        //public CircularImageView pic ;
+
+        public TextView  name, seller ,actual_price , total_price , cut_off , delivery_details , product_count ;
+        public ImageView pic , plus , minus , delete;
         LinearLayout recycle_layout ;
 
         public MyViewHolder(View view) {
             super(view);
-//            date = (TextView) view.findViewById(R.id.date);
-//            name = (TextView) view.findViewById(R.id.msg_name);
-//            msg = (TextView) view.findViewById(R.id.chat_msg);
-//          //  pic = (CircularImageView) view .findViewById(R.id.pic_chat);
-   //       recycle_layout = (LinearLayout) view .findViewById(R.id.noti_recycle_item);
-
-
-
+            seller = (TextView) view.findViewById(R.id.prod_seller);
+            name = (TextView) view.findViewById(R.id.prod_name);
+            actual_price = (TextView) view.findViewById(R.id.actual_price);
+            total_price = (TextView) view.findViewById(R.id.total_price);
+            cut_off = (TextView)view.findViewById(R.id.cut_off_precent);
+            pic = (ImageView) view .findViewById(R.id.product_img);
+            delivery_details = (TextView)view.findViewById(R.id.delivery_details);
+            plus = (ImageView)view.findViewById(R.id.plus);
+            minus = (ImageView)view.findViewById(R.id.minus);
+            product_count = (TextView)view.findViewById(R.id.items_count);
+            delete = (ImageView)view.findViewById(R.id.remove_product);
 
         }
 
@@ -69,11 +79,76 @@ public class Checkout_Recycle_Adapter extends RecyclerView.Adapter<Checkout_Recy
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-       // holder.date.setText(ndate.get(position));
-      //  holder.name.setText(msgs.get(position));
-      //  holder.msg.setText(msgs.get(position));
+
+
+         holder.actual_price.setText(ctc.getString(R.string.Rs_symbol)+"1000");
+         holder.name.setText("Timex TW002E101 Analog Watch - For Men");
+         holder.seller.setText("Seller : Best Offers");
+         holder.total_price.setText(ctc.getString(R.string.Rs_symbol)+"1500");
+         holder.cut_off.setText("50 % OFF");
+         holder.delivery_details.setText("Delivery : Free (with in 4-7 days)");
+         holder.product_count.setText("1");
+
+
+
+
+        holder.plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.startAnimation(AnimationUtils.loadAnimation(ctc, R.anim.click_image_anim));
+                YoYo.with(Techniques.Pulse)
+                        .duration(1000)
+                        .playOn(holder.product_count);
+
+
+
+                int value_no_of_unit = Integer.parseInt(holder.product_count.getText().toString());
+
+                holder.product_count.setText(""+(value_no_of_unit+1));
+
+
+            }
+        });
+
+
+        holder.minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                view.startAnimation(AnimationUtils.loadAnimation(ctc, R.anim.click_image_anim));
+                YoYo.with(Techniques.Pulse)
+                        .duration(1000)
+                        .playOn(holder.product_count);
+
+                int value_no_of_unit = Integer.parseInt(holder.product_count.getText().toString());
+
+                if (value_no_of_unit > 1) {
+                    holder.product_count.setText("" + (value_no_of_unit - 1));
+
+                    //  dbm.changeExsistingRowintable(productid_arr.get(position), "" + (Integer.parseInt(product_no_of_unit.get(position)) - 1));
+                  //  product_no_of_unit.set(position ,""+(value_no_of_unit-1));
+
+
+//                    dbm.addtocart(product_cat_arr.get(position),productid_arr.get(position), productname_arr.get(position), Specialinstructions,
+//                            product_price_arr.get(position),
+//                            product_no_of_unit.get(position));
+                }
+                else{
+//                    dbm.removeItemfromDB(productid_arr.get(position));
+//                    productid_arr.remove(position);
+//                    productname_arr.remove(position);
+//                    product_no_of_unit.remove(position);
+//                    product_price_arr.remove(position);
+
+
+                    notifyDataSetChanged();
+
+                }
+
+            }
+        });
 
 
 //        Glide
@@ -88,15 +163,9 @@ public class Checkout_Recycle_Adapter extends RecyclerView.Adapter<Checkout_Recy
 
        // setFadeAnimation(holder.itemView);
 
-//        holder.recycle_layout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-////                String view_Home_url = com.apporioinfolabs.editprofilemodule.AppConstants.BASE_URL+"add_my_connection.php?user_id="+ MainActivity.user_id+"&connect_id=" + idd.get(position) ;
-////                ExecuteApi.Parse(ctc , "AddConnection" , view_Home_url  , Api_listener );
-//
-//            }
-//        });
+
+
+
 
     }
     @Override
@@ -111,6 +180,19 @@ public class Checkout_Recycle_Adapter extends RecyclerView.Adapter<Checkout_Recy
         view.startAnimation(anim);
     }
 
+
+//    public Checkout_Recycle_Adapter setupPositiveButton(Checkout_Recycle_Adapter.MyViewHolder holder ,ImageView.OnClickListener listener) {
+//
+//        this.mPositiveClickListener = listener;
+//        return this;
+//    }
+
+
+//    public Checkout_Recycle_Adapter setupPositiveButton(ImageView.OnClickListener listener) {
+//
+//        this.mPositiveClickListener = listener;
+//        return this;
+//    }
 
 
 }

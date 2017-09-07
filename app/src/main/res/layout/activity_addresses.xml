@@ -43,61 +43,17 @@
         android:orientation="vertical"
         android:padding="@dimen/_5sdp">
 
+
     <LinearLayout
+        android:id="@+id/ll_edit_addresses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/grey_round_corner"
-        >
+       >
 
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Lalit Kumar  9910623373"
-            android:theme="@style/MyRadioButton"
-            android:layout_marginLeft="@dimen/_5sdp"/>
-
-        <views.textview.TypefaceTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:text="415, 4th Floor Metropolis Mall MG Road (122001)"
-            android:layout_marginLeft="@dimen/_30sdp"
-            geekui:customTypeface="fonts/CoreSansDRegular.otf"
-            android:textSize="@dimen/small_text"
-            android:maxLines="2"
-            />
-
-        <views.textview.TypefaceTextView
-            android:id="@+id/txt_edit_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="EDIT"
-            android:textColor="@color/muted_white"
-            geekui:customTypeface="fonts/CoreSansDRegular.otf"
-            android:textSize="@dimen/medium_text"
-            android:elevation="@dimen/_5sdp"
-            android:layout_gravity="right"
-            android:paddingLeft="@dimen/_10sdp"
-            android:paddingRight="@dimen/_10sdp"
-            android:paddingTop="@dimen/_5sdp"
-            android:paddingBottom="@dimen/_5sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:background="@drawable/primary_filled_round_corner"/>
 
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/ll_edit_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
 
 
 
@@ -142,9 +98,10 @@
         android:id="@+id/ll_add_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
-
+        <include layout="@layout/add_address_layout"/>
 
 
     </LinearLayout>
