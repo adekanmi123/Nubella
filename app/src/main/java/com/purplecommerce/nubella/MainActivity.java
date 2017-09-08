@@ -4,8 +4,12 @@ package com.purplecommerce.nubella;
 import android.content.Intent;
 import android.speech.RecognizerIntent;
 import android.support.annotation.IdRes;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -14,8 +18,14 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
@@ -38,10 +48,16 @@ public class MainActivity extends AppCompatActivity {
     BottomBar bottomBar ;
     FrameLayout Fragment_Container  ;
     LinearLayout toolbar_container ;
-    FragmentManager fragmentManager ;
+    public static FragmentManager fragmentManager ;
     FragmentTransaction fragmentTransaction ;
     MaterialSearchView searchView ;
+    public static TextView Toolbar_title_txt ;
+    public static ImageView Toolbar_image ;
 
+
+    private Toolbar toolbar;
+    private NavigationView navigationView;
+    private DrawerLayout drawerLayout;
 
 
     @Override
@@ -86,8 +102,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        SearchAdapter searchAdapter = new SearchAdapter(MainActivity.this);
-//        searchView.setAdapter(searchAdapter);
+
 
 
     }
@@ -95,16 +110,25 @@ public class MainActivity extends AppCompatActivity {
     private void Init() {
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        AddBootomBar();
+       // AddBootomBar();
         Fragment_Container = (FrameLayout)findViewById(R.id.fragment_container);
         searchView = (MaterialSearchView) findViewById(R.id.search_view);
         searchView.setVoiceSearch(false); //or false
         searchView.setCursorDrawable(R.drawable.custom_cursor);
         searchView.setSuggestions(getResources().getStringArray(R.array.query_suggestions));
         searchView.setEllipsize(true);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-      //  toolbar_container = (LinearLayout)findViewById(R.id.llContainer);
+//        Toolbar_title_txt = (TextView)findViewById(R.id.title_txt);
+//        Toolbar_image = (ImageView)findViewById(R.id.toolbar_img);
+//        Toolbar_title_txt.setVisibility(View.GONE);
+//        Toolbar_image.setVisibility(View.VISIBLE);
+
+       // navigationView = (NavigationView) findViewById(R.id.navigation_view);
+
+
+        AddBootomBar();
+
 
     }
 
@@ -119,22 +143,22 @@ public class MainActivity extends AppCompatActivity {
                     HomeFragment home = new HomeFragment();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.fragment_container, home , "Home");
-                   // fragmentTransaction.addToBackStack(null);
+                    // fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                 }else if (tabId == R.id.tab_listing){
 
-                    ProductListingFragment listingFragment = new ProductListingFragment();
-                    fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.fragment_container, listingFragment , "ListingFragment");
-                  //  fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
+//                    ProductListingFragment listingFragment = new ProductListingFragment();
+//                    fragmentTransaction = fragmentManager.beginTransaction();
+//                    fragmentTransaction.replace(R.id.fragment_container, listingFragment , "ListingFragment");
+//                  //  fragmentTransaction.addToBackStack(null);
+//                    fragmentTransaction.commit();
 
                 }else if (tabId == R.id.tab_cart){
 
                     MyCartFragment cartFragment = new MyCartFragment();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.fragment_container, cartFragment , "MyCart");
-                  //  fragmentTransaction.addToBackStack(null);
+                    //  fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
 
                 }else if (tabId == R.id.tab_orders){
@@ -142,14 +166,14 @@ public class MainActivity extends AppCompatActivity {
                     MyOrdersFragment myOrdersFragment = new MyOrdersFragment();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.fragment_container, myOrdersFragment , "MyOrders");
-                  //  fragmentTransaction.addToBackStack(null);
+                    //  fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
 
                 }else if (tabId == R.id.tab_account){
                     MyAccount myAccount = new MyAccount();
                     fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.fragment_container, myAccount , "MyAccount");
-                 //   fragmentTransaction.addToBackStack(null);
+                    //   fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                 }
 
@@ -184,9 +208,42 @@ public class MainActivity extends AppCompatActivity {
         MenuItem item = menu.findItem(R.id.action_search);
         searchView.setMenuItem(item);
 
+        MenuItem item1 = menu.findItem(R.id.badge);
+        MenuItemCompat.setActionView(item1, R.layout.badge_layout);
+        RelativeLayout notifCount = (RelativeLayout)   MenuItemCompat.getActionView(item1);
+
+        TextView tv = (TextView) notifCount.findViewById(R.id.actionbar_notifcation_textview);
+        tv.setText("12");
+
+       notifCount.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               startActivity(new Intent(MainActivity.this , CartActivity.class));
+           }
+       });
+
+
         return true;
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.badge) {
+
+          //  startActivity(new Intent(MainActivity.this , CartActivity.class));
+
+            //do whatever you want to do here.
+            return true;
+        }
+
+
+
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public void onBackPressed() {
@@ -235,7 +292,119 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private void uncheckAllMenuItems(NavigationView navigationView) {
+        final Menu menu = navigationView.getMenu();
+        for (int i = 0; i < menu.size(); i++) {
+            MenuItem item = menu.getItem(i);
+            if (item.hasSubMenu()) {
+                SubMenu subMenu = item.getSubMenu();
+                for (int j = 0; j < subMenu.size(); j++) {
+                    MenuItem subMenuItem = subMenu.getItem(j);
+                    subMenuItem.setChecked(false);
+                }
+            } else {
+                item.setChecked(false);
+            }
+        }
+
+    }
+
+
 
 
 
 }
+
+//    public void AddNavigationView(){
+//
+//        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+//
+//            // This method will trigger on item Click of navigation menu
+//            @Override
+//            public boolean onNavigationItemSelected(MenuItem menuItem) {
+//                Log.e("**","menu id"+menuItem.getItemId());
+//
+//                uncheckAllMenuItems(navigationView);
+//
+//                // now set clicked menu item to checked
+//                menuItem.setChecked(true);
+//
+//                // close drawer and load the content for that menu item
+//                drawerLayout.closeDrawers();
+//
+//
+//
+//                if (menuItem.getItemId() == R.id.tab_home) {
+//                    HomeFragment home = new HomeFragment();
+//                    fragmentTransaction = fragmentManager.beginTransaction();
+//                    fragmentTransaction.replace(R.id.fragment_container, home, "Home");
+//                    // fragmentTransaction.addToBackStack(null);
+//                    fragmentTransaction.commit();
+//                } else if (menuItem.getItemId()  == R.id.tab_listing) {
+//
+////                    ProductListingFragment listingFragment = new ProductListingFragment();
+////                    fragmentTransaction = fragmentManager.beginTransaction();
+////                    fragmentTransaction.replace(R.id.fragment_container, listingFragment , "ListingFragment");
+////                  //  fragmentTransaction.addToBackStack(null);
+////                    fragmentTransaction.commit();
+//
+//                } else if (menuItem.getItemId()  == R.id.tab_cart) {
+//
+//                    MyCartFragment cartFragment = new MyCartFragment();
+//                    fragmentTransaction = fragmentManager.beginTransaction();
+//                    fragmentTransaction.replace(R.id.fragment_container, cartFragment, "MyCart");
+//                    //  fragmentTransaction.addToBackStack(null);
+//                    fragmentTransaction.commit();
+//
+//                } else if (menuItem.getItemId()  == R.id.tab_orders) {
+//
+//                    MyOrdersFragment myOrdersFragment = new MyOrdersFragment();
+//                    fragmentTransaction = fragmentManager.beginTransaction();
+//                    fragmentTransaction.replace(R.id.fragment_container, myOrdersFragment, "MyOrders");
+//                    //  fragmentTransaction.addToBackStack(null);
+//                    fragmentTransaction.commit();
+//
+//                } else if (menuItem.getItemId()  == R.id.tab_account) {
+//                    MyAccount myAccount = new MyAccount();
+//                    fragmentTransaction = fragmentManager.beginTransaction();
+//                    fragmentTransaction.replace(R.id.fragment_container, myAccount, "MyAccount");
+//                    //   fragmentTransaction.addToBackStack(null);
+//                    fragmentTransaction.commit();
+//
+//                }
+//
+//                return true ;
+//
+//            }
+//
+//        });
+//
+//        // Initializing Drawer Layout and ActionBarToggle
+//        drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+//        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
+//
+//            @Override
+//            public void onDrawerClosed(View drawerView) {
+//                // Code here will be triggered once the drawer closes as we dont want anything to happen so we leave this blank
+//                super.onDrawerClosed(drawerView);
+//            }
+//
+//            @Override
+//            public void onDrawerOpened(View drawerView) {
+//                // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
+//
+//                super.onDrawerOpened(drawerView);
+//            }
+//        };
+//
+//        //Setting the actionbarToggle to drawer layout
+//        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+//
+//        //calling sync state is necessay or else your hamburger icon wont show up
+//        actionBarDrawerToggle.syncState();
+//
+//
+//
+//    }
+
+

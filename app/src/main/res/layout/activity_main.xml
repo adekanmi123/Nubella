@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+<android.support.design.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     >
-
-
-
-
-
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -22,7 +24,7 @@
         android:id="@+id/myScrollingContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:layout_marginTop="?attr/actionBarSize">
 
         <!-- Your loooooong scrolling content here. -->
 
@@ -35,7 +37,7 @@
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
+            android:layout_marginBottom="@dimen/_50sdp"
             >
 
 
@@ -48,7 +50,7 @@
     </FrameLayout>
 
     <!--*/shy is used for hide bottom bar /*-->
-
+    <!--app:bb_behavior="shy"-->
     <com.roughike.bottombar.BottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
@@ -64,19 +66,22 @@
         app:bb_showShadow="true"
         app:bb_titleTypeFace="fonts/CoreSansDRegular.otf"/>
 
+</android.support.design.widget.CoordinatorLayout>
 
 
     <android.support.design.widget.AppBarLayout
        android:id="@+id/appBar"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-          >
+       android:background="@android:color/transparent"
+       >
 
 
     <FrameLayout
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        >
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -84,8 +89,8 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/muted_white"
             app:layout_scrollFlags="snap"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            >
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:elevation="@dimen/_4sdp">
 
 
             <FrameLayout
@@ -110,15 +115,15 @@
         <com.miguelcatalan.materialsearchview.MaterialSearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:visibility="visible"
-            />
+            android:elevation="@dimen/_5sdp"/>
 
     </FrameLayout>
 
 </android.support.design.widget.AppBarLayout>
 
 
-</android.support.design.widget.CoordinatorLayout>
 
 
+</FrameLayout>

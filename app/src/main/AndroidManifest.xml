@@ -38,7 +38,8 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".BaseActivity" />
-        <activity android:name=".ProductsByCategoryActivity"></activity>
+        <activity android:name=".ProductsByCategoryActivity" />
+        <activity android:name=".ProductsListActivity"></activity>
     </application>
 
 </manifest>

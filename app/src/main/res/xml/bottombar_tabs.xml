@@ -2,25 +2,25 @@
 <tabs>
     <tab
         id="@+id/tab_home"
-        icon="@drawable/ic_home"
+        icon="@drawable/ic_home_black"
         title="Home" />
     <tab
         id="@+id/tab_listing"
-        icon="@drawable/ic_categories"
+        icon="@drawable/ic_widgets"
         title="Product Listing" />
     <tab
         id="@+id/tab_cart"
-        icon="@drawable/ic_cart"
+        icon="@drawable/ic_shopping_cart"
         title="My Cart" />
 
     <tab
         id="@+id/tab_orders"
-        icon="@drawable/ic_order_history"
+        icon="@drawable/ic_view_list"
         title="My Orders" />
 
     <tab
         id="@+id/tab_account"
-        icon="@drawable/ic_account"
+        icon="@drawable/ic_perm_identity"
         title="My Account" />
 
 
