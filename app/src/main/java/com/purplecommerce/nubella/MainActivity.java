@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -25,18 +24,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
-import com.purplecommerce.nubella.Adapters.SearchAdapter;
+import com.purplecommerce.nubella.Fragments.CategoriesFragment;
 import com.purplecommerce.nubella.Fragments.HomeFragment;
 import com.purplecommerce.nubella.Fragments.MyAccount;
-import com.purplecommerce.nubella.Fragments.MyCartFragment;
 import com.purplecommerce.nubella.Fragments.MyOrdersFragment;
-import com.purplecommerce.nubella.Fragments.ProductListingFragment;
 import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabReselectListener;
 import com.roughike.bottombar.OnTabSelectListener;
 
@@ -66,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
-
         Init();
 
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
@@ -76,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 //Do some magic
 
                 Log.e("**","query"+query);
-
 
                 return false;
             }
@@ -101,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
                 //Do some magic
             }
         });
-
-
 
 
     }
@@ -147,18 +137,10 @@ public class MainActivity extends AppCompatActivity {
                     fragmentTransaction.commit();
                 }else if (tabId == R.id.tab_listing){
 
-//                    ProductListingFragment listingFragment = new ProductListingFragment();
-//                    fragmentTransaction = fragmentManager.beginTransaction();
-//                    fragmentTransaction.replace(R.id.fragment_container, listingFragment , "ListingFragment");
-//                  //  fragmentTransaction.addToBackStack(null);
-//                    fragmentTransaction.commit();
-
-                }else if (tabId == R.id.tab_cart){
-
-                    MyCartFragment cartFragment = new MyCartFragment();
+                    CategoriesFragment listingFragment = new CategoriesFragment();
                     fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.fragment_container, cartFragment , "MyCart");
-                    //  fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.replace(R.id.fragment_container, listingFragment , "ListingFragment");
+                  //  fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
 
                 }else if (tabId == R.id.tab_orders){
@@ -182,8 +164,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        BottomBarTab cart = bottomBar.getTabWithId(R.id.tab_cart);
-        cart.setBadgeCount(5);
+//        BottomBarTab cart = bottomBar.getTabWithId(R.id.tab_cart);
+//        cart.setBadgeCount(5);
 
 
         bottomBar.setOnTabReselectListener(new OnTabReselectListener() {
@@ -215,9 +197,14 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) notifCount.findViewById(R.id.actionbar_notifcation_textview);
         tv.setText("12");
 
-       notifCount.setOnClickListener(new View.OnClickListener() {
+        ImageView cart = (ImageView)notifCount.findViewById(R.id.cart_img_action);
+
+        cart.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
+
+              // Toast.makeText(MainActivity.this, "test", Toast.LENGTH_SHORT).show();
+
                startActivity(new Intent(MainActivity.this , CartActivity.class));
            }
        });
@@ -231,15 +218,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-
-        if (id == R.id.badge) {
-
-          //  startActivity(new Intent(MainActivity.this , CartActivity.class));
-
-            //do whatever you want to do here.
-            return true;
-        }
-
 
 
         return super.onOptionsItemSelected(item);
@@ -342,7 +320,7 @@ public class MainActivity extends AppCompatActivity {
 //                    fragmentTransaction.commit();
 //                } else if (menuItem.getItemId()  == R.id.tab_listing) {
 //
-////                    ProductListingFragment listingFragment = new ProductListingFragment();
+////                    CategoriesFragment listingFragment = new CategoriesFragment();
 ////                    fragmentTransaction = fragmentManager.beginTransaction();
 ////                    fragmentTransaction.replace(R.id.fragment_container, listingFragment , "ListingFragment");
 ////                  //  fragmentTransaction.addToBackStack(null);

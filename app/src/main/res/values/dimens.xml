@@ -2,8 +2,11 @@
 <resources>
 
 
-    <dimen name="large_text">@dimen/_13sdp</dimen>
-    <dimen name="medium_text">@dimen/_10sdp</dimen>
-    <dimen name="small_text">@dimen/_8sdp</dimen>
+    <dimen name="large_text">@dimen/_15sdp</dimen>
+    <dimen name="medium_text">@dimen/_12sdp</dimen>
+    <dimen name="small_text">@dimen/_10sdp</dimen>
+    <dimen name="extra_small_text">@dimen/_8sdp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="card_margin">10dp</dimen>
 
 </resources>

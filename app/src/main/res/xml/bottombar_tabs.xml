@@ -7,11 +7,11 @@
     <tab
         id="@+id/tab_listing"
         icon="@drawable/ic_widgets"
-        title="Product Listing" />
-    <tab
-        id="@+id/tab_cart"
-        icon="@drawable/ic_shopping_cart"
-        title="My Cart" />
+        title="Categories" />
+    <!--<tab-->
+        <!--id="@+id/tab_cart"-->
+        <!--icon="@drawable/ic_shopping_cart"-->
+        <!--title="My Cart" />-->
 
     <tab
         id="@+id/tab_orders"

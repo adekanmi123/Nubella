@@ -17,14 +17,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
+        android:layout_marginTop="?attr/actionBarSize">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_3sdp"
+            android:background="@drawable/toolbar_shadow"
+            android:layout_gravity="top"
+            />
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/myScrollingContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_marginTop="@dimen/_2sdp">
 
         <!-- Your loooooong scrolling content here. -->
 
@@ -108,9 +114,9 @@
 
 
 
-
-
         </android.support.v7.widget.Toolbar>
+
+
 
         <com.miguelcatalan.materialsearchview.MaterialSearchView
             android:id="@+id/search_view"
@@ -120,6 +126,8 @@
             android:elevation="@dimen/_5sdp"/>
 
     </FrameLayout>
+
+
 
 </android.support.design.widget.AppBarLayout>
 

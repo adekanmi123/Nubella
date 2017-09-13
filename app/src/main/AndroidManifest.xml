@@ -39,7 +39,13 @@
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".ProductsByCategoryActivity" />
-        <activity android:name=".ProductsListActivity"></activity>
+        <activity android:name=".ProductsListActivity" />
+        <activity
+            android:name=".Fragments.FabDemoActivity"
+            android:label="@string/title_activity_fab_demo"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".FabDemoActivity" />
+        <activity android:name=".ProductDetailsActivity" />
     </application>
 
 </manifest>

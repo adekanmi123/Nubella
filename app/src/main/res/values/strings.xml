@@ -20,6 +20,13 @@
         <item>Ruby</item>
         <item>JavaScript</item>
     </string-array>
+    <string name="title_activity_fab_demo">FabDemoActivity</string>
+    <string name="share_using">share via</string>
 
+
+
+    <string name="see_more"><u>See More</u></string>
+    <string name="bullets">\u2022</string>
+    <string name="test">S</string>
 
 </resources>
