@@ -35,7 +35,9 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:textSize="@dimen/medium_text"
-                android:textColor="@color/colorPrimary"/>
+                android:textColor="@color/colorPrimary"
+                android:inputType="textPersonName"
+                android:singleLine="true"/>
 
 
         </LinearLayout>
@@ -62,7 +64,9 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:textSize="@dimen/medium_text"
-                android:textColor="@color/colorPrimary"/>
+                android:textColor="@color/colorPrimary"
+                android:inputType="phone"
+                android:singleLine="true"/>
 
 
         </LinearLayout>
@@ -101,7 +105,8 @@
                 android:background="@null"
                 android:textSize="@dimen/medium_text"
                 android:textColor="@color/colorPrimary"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:singleLine="true"/>
 
 
         </LinearLayout>
@@ -128,7 +133,9 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:textSize="@dimen/medium_text"
-                android:textColor="@color/colorPrimary"/>
+                android:textColor="@color/colorPrimary"
+                android:inputType="text"
+                android:singleLine="true"/>
 
 
         </LinearLayout>
@@ -162,7 +169,9 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:textSize="@dimen/medium_text"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            android:inputType="text"
+            android:singleLine="true"/>
 
 
     </LinearLayout>
@@ -196,7 +205,8 @@
                 android:background="@null"
                 android:textSize="@dimen/medium_text"
                 android:textColor="@color/colorPrimary"
-                />
+                android:inputType="text"
+                android:singleLine="true"/>
 
 
         </LinearLayout>
@@ -223,7 +233,9 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:textSize="@dimen/medium_text"
-                android:textColor="@color/colorPrimary"/>
+                android:textColor="@color/colorPrimary"
+                android:inputType="text"
+                android:singleLine="true"/>
 
 
         </LinearLayout>
@@ -263,7 +275,8 @@
                 android:background="@null"
                 android:textSize="@dimen/medium_text"
                 android:textColor="@color/colorPrimary"
-                />
+                android:inputType="text"
+                android:singleLine="true"/>
 
 
         </LinearLayout>
@@ -290,7 +303,9 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:textSize="@dimen/medium_text"
-                android:textColor="@color/colorPrimary"/>
+                android:textColor="@color/colorPrimary"
+                android:inputType="phone"
+                android:singleLine="true"/>
 
 
         </LinearLayout>
@@ -321,7 +336,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
+            android:checked="false"
             android:text="Home(All Day Delivery)"
             android:theme="@style/MyRadioButton"
             android:layout_marginLeft="@dimen/_5sdp"/>
@@ -330,7 +345,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
+            android:checked="false"
             android:text="Work(Delivery Between 9AM-6PM)"
             android:theme="@style/MyRadioButton"
             android:layout_marginLeft="@dimen/_5sdp"/>
@@ -347,7 +362,7 @@
 
 
         <views.textview.TypefaceTextView
-            android:id="@+id/txt_checkout"
+            android:id="@+id/txt_save_deliver"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="SAVE AND DELIVER HERE"

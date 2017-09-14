@@ -463,15 +463,32 @@
 
    </ScrollView>
 
-    <views.textview.TypefaceTextView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_gravity="bottom"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/muted_white"
-        android:text="CONTINUE"
-        android:textSize="@dimen/large_text"
-        android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_3sdp"
+            android:background="@drawable/shadow"/>
+
+
+            <views.textview.TypefaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="bottom"
+                android:textColor="@color/colorPrimary"
+                android:text="CONTINUE"
+                android:textSize="@dimen/medium_text"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
 
 
     </FrameLayout>

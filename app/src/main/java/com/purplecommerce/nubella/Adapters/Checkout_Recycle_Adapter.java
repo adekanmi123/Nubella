@@ -35,8 +35,8 @@ public class Checkout_Recycle_Adapter extends RecyclerView.Adapter<Checkout_Recy
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView  name, seller ,actual_price , total_price , cut_off , delivery_details , product_count ;
-        public ImageView pic , plus , minus , delete;
+        public TextView  name, seller ,actual_price , total_price , cut_off , delivery_details , product_count , delete ;
+        public ImageView pic , plus , minus ;
         LinearLayout recycle_layout ;
 
         public MyViewHolder(View view) {
@@ -51,7 +51,7 @@ public class Checkout_Recycle_Adapter extends RecyclerView.Adapter<Checkout_Recy
             plus = (ImageView)view.findViewById(R.id.plus);
             minus = (ImageView)view.findViewById(R.id.minus);
             product_count = (TextView)view.findViewById(R.id.items_count);
-            delete = (ImageView)view.findViewById(R.id.remove_product);
+            delete = (TextView)view.findViewById(R.id.remove_product);
 
         }
 
