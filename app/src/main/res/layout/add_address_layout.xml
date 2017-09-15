@@ -386,7 +386,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:elevation="@dimen/_5sdp"
-            android:padding="@dimen/_5sdp"/>
+            android:padding="@dimen/_5sdp"
+            android:background="@drawable/ripple_text_white_grey"/>
 
 
 

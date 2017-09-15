@@ -18,7 +18,7 @@ import com.purplecommerce.nubella.AccountModule.LoginActivity;
 
 import java.util.ArrayList;
 
-public class AddressesActivity extends AppCompatActivity {
+public class AddressesActivity extends BaseActivity {
 
 
     LinearLayout ll_edit_addresses, ll_parent_new , add_new;

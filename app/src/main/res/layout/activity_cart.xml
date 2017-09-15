@@ -144,7 +144,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:elevation="@dimen/_5sdp"
-            android:background="@drawable/primary_filled_round_corner"/>
+            android:background="@drawable/primary_filled_round_corner"
+            android:foreground="@drawable/ripple_text_white_grey"/>
 
     </LinearLayout>
 

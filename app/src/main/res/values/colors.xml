@@ -10,6 +10,8 @@
     <color name="muted_light_grey">#EEEEEE</color>
     <color name="layout_back_full">#F5F5F5</color>
 
+    <color name="black_ripple">#616161</color>
+
 
     <color name="filtersfab">#ecf0f1</color>
     <color name="filters_header">#303f9f</color>
@@ -21,6 +23,8 @@
     <color name="brown">#795548</color>
     <color name="bg">#f5f5f5</color>
     <color name="bgnew">#464756</color>
+
+
 
 
 

@@ -28,4 +28,12 @@
     <string name="bullets">\u2022</string>
     <string name="test">S</string>
 
+
+
+
+    <string name="open_drawer">Drawer Open</string>
+    <string name="close_drawer">Drawer Close</string>
+
+
+
 </resources>
