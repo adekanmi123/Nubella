@@ -2,6 +2,7 @@ package com.purplecommerce.nubella;
 
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
@@ -43,19 +44,14 @@ import com.roughike.bottombar.OnTabSelectListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
 
-    BottomBar bottomBar ;
-    FrameLayout Fragment_Container  ;
-    public static FragmentManager fragmentManager ;
-    FragmentTransaction fragmentTransaction ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+//        setContentView(R.layout.activity_main);
 
         Init();
 
@@ -64,11 +60,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void cartClick() {
+        super.cartClick();
+
+        startActivity(new Intent(MainActivity.this , CartActivity.class));
+
+    }
+
     private void Init() {
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
 
-        Fragment_Container = (FrameLayout)findViewById(R.id.fragment_container);
+        HomeFragment home = new HomeFragment();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.view_stub, home , "Home");
+        fragmentTransaction.commit();
+
+
+
+
 
        // AddBootomBar();
 
@@ -81,8 +92,30 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    boolean doubleBackToExitPressedOnce = false;
 
-//    public void AddBootomBar(){
+    @Override
+    public void onBackPressed() {
+
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce=false;
+                }
+            }, 2000);
+
+    }
+
+    //    public void AddBootomBar(){
 //
 //        bottomBar = (BottomBar) findViewById(R.id.bottomBar);
 //        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {

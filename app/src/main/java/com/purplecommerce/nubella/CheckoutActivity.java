@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.purplecommerce.nubella.Adapters.Checkout_Recycle_Adapter;
 
-public class CheckoutActivity extends AppCompatActivity {
+public class CheckoutActivity extends BaseActivity {
 
 
     CardView DeliveryAddress  ;
@@ -30,7 +30,7 @@ public class CheckoutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusBarColor();
+
         setContentView(R.layout.activity_checkout);
 
 
@@ -97,24 +97,12 @@ public class CheckoutActivity extends AppCompatActivity {
         delivery_price = (TextView)findViewById(R.id.delivery_total);
         payable_amount = (TextView)findViewById(R.id.payable_total);
 
-
+        setTitle("Checkout");
 
     }
 
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public void setStatusBarColor(){
 
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
-            Window window = CheckoutActivity.this.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(CheckoutActivity.this.getResources().getColor(R.color.colorPrimary));
-        } else {
-            Window window = CheckoutActivity.this.getWindow();
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
-    }
 
 
 }

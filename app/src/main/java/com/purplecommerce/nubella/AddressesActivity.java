@@ -61,6 +61,8 @@ public class AddressesActivity extends BaseActivity {
 
         add_new = (LinearLayout)findViewById(R.id.ll_add_new);
 
+        setTitle("Addresses");
+
     }
 
 

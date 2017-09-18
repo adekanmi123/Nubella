@@ -2,7 +2,9 @@ package com.purplecommerce.nubella;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -16,7 +18,7 @@ import android.widget.Toast;
 
 import com.purplecommerce.nubella.Adapters.Checkout_Recycle_Adapter;
 
-public class CartActivity extends AppCompatActivity {
+public class CartActivity extends BaseActivity {
 
    RecyclerView recyclerView ;
    TextView total_amount , checkout , pricetxt_withitems , product_total_price , delivery_price , payable_amount ;
@@ -25,7 +27,6 @@ public class CartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusBarColor();
         setContentView(R.layout.activity_cart);
 
 
@@ -46,14 +47,11 @@ public class CartActivity extends AppCompatActivity {
         });
 
 
+
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(new Checkout_Recycle_Adapter(CartActivity.this));
-
-
-
-
 
     }
 
@@ -69,21 +67,27 @@ public class CartActivity extends AppCompatActivity {
         delivery_price = (TextView)findViewById(R.id.delivery_total);
         payable_amount = (TextView)findViewById(R.id.payable_total);
 
+        setTitle("Cart");
+
+        toolbar.post(new Runnable() {
+            @Override
+            public void run() {
+                Drawable d = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_arrow_back_black, null);
+                toolbar.setNavigationIcon(d);
+            }
+        });
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+
+
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public void setStatusBarColor(){
 
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
-            Window window = CartActivity.this.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(CartActivity.this.getResources().getColor(R.color.colorPrimary));
-        } else {
-            Window window = CartActivity.this.getWindow();
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
-    }
 
 
 

@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ripple
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/black_ripple"
-    >
 
-
-    <item android:id="@android:id/mask">
-        <color android:color="@color/colorPrimary"/> <!-- any color will do -->
-    </item>
-
-
-    <item>
-
-<shape >
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/colorPrimary"/>
     <stroke android:width="0.5dip"
         android:color="@color/muted_grey" />
@@ -24,7 +12,4 @@
         android:bottom="0dip" />
 </shape>
 
-     </item>
-
-    </ripple>
 

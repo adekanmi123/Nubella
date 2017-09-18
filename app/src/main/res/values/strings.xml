@@ -33,7 +33,8 @@
 
     <string name="open_drawer">Drawer Open</string>
     <string name="close_drawer">Drawer Close</string>
-
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 
 
 </resources>
