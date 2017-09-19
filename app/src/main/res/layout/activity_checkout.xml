@@ -449,7 +449,7 @@
             android:layout_height="@dimen/_40sdp"
             android:orientation="vertical"
             android:layout_gravity="bottom"
-            >
+            android:background="@color/muted_white">
 
         <View
             android:layout_width="match_parent"
