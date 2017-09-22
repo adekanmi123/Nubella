@@ -63,6 +63,7 @@ public class MainActivity extends BaseActivity {
 
        categoryDBManager = new CategoryDBManager(MainActivity.this);
 
+      // categoryDBManager.ClearCategoriesTable();
 
         if (categoryDBManager.CategoryTableIsEmpty()){
 
@@ -115,6 +116,9 @@ public class MainActivity extends BaseActivity {
             categoryDBManager.SaveNewCategory(215 , "" ,0 , 2 , "Top Wear" , 2  , 26);
             categoryDBManager.SaveNewCategory(135 , "" ,0 , 1 , "Corporates" , 1 , 2);
             categoryDBManager.SaveNewCategory(146 , "" ,1 , 1 , "Salesasfewy" , 1  , 3);
+            categoryDBManager.SaveNewCategory(161 , "" ,1 , 2 ,"Fashion Advice" ,2 , 22);
+            categoryDBManager.SaveNewCategory(187 , "" ,1 , 3 ,"SHOP BY OCCASION" ,162 , 2);
+            categoryDBManager.SaveNewCategory(166 , "" ,1 , 3 ,"Shop by body shape" ,161 , 1);
 
         }
 

@@ -54,6 +54,7 @@ dependencies {
     compile 'com.amitshekhar.android:android-networking:1.0.0'
     compile 'com.github.jd-alexander:LikeButton:0.2.2'
     testCompile 'junit:junit:4.12'
+    compile files('libs/java-json.jar')
 }
 
 
