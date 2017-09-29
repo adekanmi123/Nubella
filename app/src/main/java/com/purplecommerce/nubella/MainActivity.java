@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity {
 
        categoryDBManager = new CategoryDBManager(MainActivity.this);
 
-      // categoryDBManager.ClearCategoriesTable();
+     // categoryDBManager.ClearCategoriesTable();
 
         if (categoryDBManager.CategoryTableIsEmpty()){
 
@@ -87,12 +87,14 @@ public class MainActivity extends BaseActivity {
             categoryDBManager.SaveNewCategory(211 , "" ,1 , 3 , "Shop By ocassion" , 178 , 3);
             categoryDBManager.SaveNewCategory(212 , "" ,1 , 4 , "Workwear" , 211 , 1);
             categoryDBManager.SaveNewCategory(213 , "" ,1 , 4 , "Evening" , 211 , 2);
+            categoryDBManager.SaveNewCategory(189 , "" ,1 , 4 , "Evening" , 187 , 2);
             categoryDBManager.SaveNewCategory(214 , "" ,1 , 4 , "Casual" , 211 , 3);
             categoryDBManager.SaveNewCategory(162 , "" ,1 , 2 , "Clothing" , 2 , 21);
             categoryDBManager.SaveNewCategory(180 , "" ,1 , 3 , "Shop by Clothing" , 162 , 1);
             categoryDBManager.SaveNewCategory(181 , "" ,1 , 4 , "Blouses, Shirts & Tees" , 180 , 1);
             categoryDBManager.SaveNewCategory(210 , "" ,0 , 4 , "Tees" , 180 , 2);
             categoryDBManager.SaveNewCategory(182 , "" ,1 , 4 , "Dresses" , 180 , 3);
+            categoryDBManager.SaveNewCategory(216 , "" ,1 , 5 , "Dresses" , 182 , 2);
             categoryDBManager.SaveNewCategory(183 , "" ,0 , 4 , "Maxi Dresses" , 180 , 4);
             categoryDBManager.SaveNewCategory(184 , "" ,1 , 4 , "Trousers & Jeggings" , 180 , 5);
             categoryDBManager.SaveNewCategory(185 , "" ,1 , 4 , "Capes and jackets" , 180 , 6);
@@ -110,13 +112,14 @@ public class MainActivity extends BaseActivity {
             categoryDBManager.SaveNewCategory(199 , "" ,1 , 4 , "How to make tummy look flatter" , 198  , 1);
             categoryDBManager.SaveNewCategory(200 , "" ,1 , 4 , "How to dress wide hips" , 198  , 2);
             categoryDBManager.SaveNewCategory(201 , "" ,1 , 4 , "How to dress large bust" , 198  , 3);
+            categoryDBManager.SaveNewCategory(161 , "" ,1 , 2 ,"Fashion Advice" ,2 , 22);
             categoryDBManager.SaveNewCategory(163 , "" ,1 , 2 , "Sale" , 2  , 23);
             categoryDBManager.SaveNewCategory(164 , "" ,0 , 2 , "Lookbook" , 2 , 24);
             categoryDBManager.SaveNewCategory(165 , "" ,0 , 2 , "Offers" , 2  , 25);
             categoryDBManager.SaveNewCategory(215 , "" ,0 , 2 , "Top Wear" , 2  , 26);
             categoryDBManager.SaveNewCategory(135 , "" ,0 , 1 , "Corporates" , 1 , 2);
             categoryDBManager.SaveNewCategory(146 , "" ,1 , 1 , "Salesasfewy" , 1  , 3);
-            categoryDBManager.SaveNewCategory(161 , "" ,1 , 2 ,"Fashion Advice" ,2 , 22);
+
             categoryDBManager.SaveNewCategory(187 , "" ,1 , 3 ,"SHOP BY OCCASION" ,162 , 2);
             categoryDBManager.SaveNewCategory(166 , "" ,1 , 3 ,"Shop by body shape" ,161 , 1);
 
