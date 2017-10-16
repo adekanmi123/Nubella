@@ -6,17 +6,30 @@
     android:orientation="vertical"
     xmlns:geekui="http://schemas.android.com/apk/res-auto">
 
+    <views.textview.TypefaceTextView
+        android:id="@+id/no_items_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/medium_text"
+        android:text="No Items In Cart !!"
+        android:textColor="@color/muted_grey"
+        android:padding="@dimen/_2sdp"
+        geekui:customTypeface="fonts/CoreSansDRegular.otf"
+        android:gravity="center"
+        android:visibility="gone"/>
 
 
     <FrameLayout
+        android:id="@+id/content_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="false"
-            android:layout_marginBottom="@dimen/_120sdp">
+            android:layout_marginBottom="@dimen/_80sdp">
 
 
         <LinearLayout
@@ -32,7 +45,17 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
       />
 
+         <LinearLayout
+             android:id="@+id/ll_crosssell"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:visibility="gone">
 
+
+             <include layout="@layout/cross_sell_products_parent_layout"/>
+
+
+         </LinearLayout>
 
 
 
@@ -44,6 +67,7 @@
 
 
         <LinearLayout
+            android:id="@+id/ll_price_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/muted_white"
@@ -51,7 +75,8 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:orientation="vertical"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="@dimen/_40sdp">
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:visibility="gone">
 
             <include layout="@layout/layout_price_details"/>
 
@@ -63,7 +88,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="bottom"
         >
@@ -72,6 +97,65 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_3sdp"
             android:background="@drawable/shadow"/>
+
+
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_35sdp"
+          android:orientation="horizontal"
+          android:padding="@dimen/_5sdp">
+
+          <FrameLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_weight="0.5">
+
+          <EditText
+              android:id="@+id/ed_coupon_code"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/_35sdp"
+              android:hint="Enter Coupon Code"
+              android:textColor="@color/colorPrimary"
+              android:visibility="visible"
+              android:layout_gravity="center"/>
+
+           <views.textview.TypefaceTextView
+               android:id="@+id/coupon_applied_not"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               geekui:customTypeface="fonts/CoreSansDRegular.otf"
+               android:layout_gravity="center"
+               android:textColor="@color/colorPrimary"
+               android:textSize="@dimen/small_text"
+               android:text="Coupon Applied Successfully !!"
+               android:visibility="gone"
+               android:background="@null"/>
+
+
+          </FrameLayout>
+
+          <views.textview.TypefaceTextView
+              android:id="@+id/txt_coupon_apply"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:text="APPLY"
+              android:textColor="@color/muted_white"
+              geekui:customTypeface="fonts/CoreSansDBold.otf"
+              android:textSize="@dimen/medium_text"
+              android:layout_weight="1"
+              android:gravity="center"
+              android:elevation="@dimen/_5sdp"
+              android:background="@drawable/grey_filled_round_corner"
+              />
+
+
+      </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/muted_grey"/>
 
 
     <LinearLayout
@@ -83,14 +167,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_weight="0.5"
-            android:layout_gravity="center">
+            android:layout_gravity="center|left">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
 
 
             <views.textview.TypefaceTextView
+                android:id="@+id/txt_total_items"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Total (5 Item) : "
+                android:text=""
                 android:textColor="@color/colorPrimary"
                 geekui:customTypeface="fonts/CoreSansDRegular.otf"
                 android:textSize="@dimen/medium_text"
@@ -106,8 +197,60 @@
             android:textSize="@dimen/medium_text"
             android:gravity="center|left"/>
 
+            <views.textview.TypefaceTextView
+                android:id="@+id/txt_subtotalallitems_price"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="100"
+                android:textColor="@color/muted_grey"
+                geekui:customTypeface="fonts/CoreSansDBold.otf"
+                android:textSize="@dimen/small_text"
+                android:gravity="center|left"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:background="@drawable/strike_back_text"
+                android:singleLine="true"/>
+
+
 
         </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/coupon_applied_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone">
+
+
+                <views.textview.TypefaceTextView
+                    android:id="@+id/txt_discount_coupon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    geekui:customTypeface="fonts/CoreSansDRegular.otf"
+                    android:textSize="@dimen/small_text"
+                    android:gravity="center|left"/>
+
+                <views.textview.TypefaceTextView
+                    android:id="@+id/txt_discount_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="100"
+                    android:textColor="@color/colorPrimary"
+                    geekui:customTypeface="fonts/CoreSansDBold.otf"
+                    android:textSize="@dimen/small_text"
+                    android:gravity="center|left"
+                    />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
 
         <views.textview.TypefaceTextView
             android:id="@+id/txt_checkout"

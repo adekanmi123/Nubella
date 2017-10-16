@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Nubella.iml" filepath="$PROJECT_DIR$/Nubella.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/circleindicator/circleindicator.iml" filepath="$PROJECT_DIR$/circleindicator/circleindicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sweet_alert/sweet_alert.iml" filepath="$PROJECT_DIR$/sweet_alert/sweet_alert.iml" />
     </modules>
   </component>
 </project>

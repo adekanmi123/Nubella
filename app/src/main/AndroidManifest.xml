@@ -22,7 +22,7 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".CartActivity"
+            android:name=".CartViews.CartActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
@@ -42,12 +42,7 @@
             android:name=".ProductsListActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-
-        <!-- <activity -->
-        <!-- android:name=".Fragments.FabDemoActivity" -->
-        <!-- android:label="@string/title_activity_fab_demo" -->
-        <!-- android:theme="@style/AppTheme" /> -->
-        <!-- <activity android:name=".FabDemoActivity" /> -->
+        <activity android:name=".FabDemoActivity" />
         <activity
             android:name=".ProductDetailsActivity"
             android:screenOrientation="portrait"
@@ -55,13 +50,7 @@
         <activity
             android:name=".AccountModule.LoginActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateVisible|adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:windowSoftInputMode="stateVisible|adjustPan"></activity>
         <activity
             android:name=".AccountModule.RegisterActivity"
             android:screenOrientation="portrait"
@@ -70,7 +59,21 @@
             android:name=".ProductDetailsViews.ProductDescriptionFeaturesActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".AccountModule.ForgotPasswordActivity"></activity>
+        <activity
+            android:name=".AccountModule.ForgotPasswordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".AccountModule.SplashActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OrderHistoryDetailsActivity"></activity>
     </application>
 
 </manifest>

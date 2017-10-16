@@ -6,7 +6,6 @@
     android:layout_height="wrap_content">
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,28 +15,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/grey_round_corner"
-            android:padding="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_5sdp"
             android:layout_weight="1"
-            android:layout_marginRight="@dimen/_5sdp">
+            android:background="@drawable/grey_round_corner"
+            android:orientation="vertical"
+            android:padding="@dimen/_4sdp">
 
             <views.textview.TypefaceTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Name"
                 android:textColor="@color/muted_grey"
-                geekui:customTypeface="fonts/CoreSansDBold.otf"
-                android:textSize="@dimen/small_text"/>
+                android:textSize="@dimen/small_text"
+                geekui:customTypeface="fonts/CoreSansDBold.otf" />
 
             <EditText
+                android:id="@+id/ed_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:textSize="@dimen/medium_text"
-                android:textColor="@color/colorPrimary"
                 android:inputType="textPersonName"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/medium_text" />
 
 
         </LinearLayout>
@@ -45,102 +45,32 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/grey_round_corner"
-            android:padding="@dimen/_4sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
             android:layout_weight="1"
-            android:layout_marginLeft="@dimen/_5sdp">
+            android:background="@drawable/grey_round_corner"
+            android:orientation="vertical"
+            android:padding="@dimen/_4sdp">
 
             <views.textview.TypefaceTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Phone Number"
                 android:textColor="@color/muted_grey"
-                geekui:customTypeface="fonts/CoreSansDBold.otf"
-                android:textSize="@dimen/small_text"/>
+                android:textSize="@dimen/small_text"
+                geekui:customTypeface="fonts/CoreSansDBold.otf" />
 
             <EditText
+                android:id="@+id/ed_phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:textSize="@dimen/medium_text"
-                android:textColor="@color/colorPrimary"
                 android:inputType="phone"
-                android:singleLine="true"/>
-
-
-        </LinearLayout>
-
-
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="@dimen/_5sdp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/grey_round_corner"
-            android:padding="@dimen/_4sdp"
-            android:layout_weight="1"
-            android:layout_marginRight="@dimen/_5sdp">
-
-            <views.textview.TypefaceTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pincode"
-                android:textColor="@color/muted_grey"
-                geekui:customTypeface="fonts/CoreSansDBold.otf"
-                android:textSize="@dimen/small_text"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:textSize="@dimen/medium_text"
+                android:singleLine="true"
                 android:textColor="@color/colorPrimary"
-                android:inputType="number"
-                android:singleLine="true"/>
+                android:textSize="@dimen/medium_text" />
 
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/grey_round_corner"
-            android:padding="@dimen/_4sdp"
-            android:layout_weight="1"
-            android:layout_marginLeft="@dimen/_5sdp">
-
-            <views.textview.TypefaceTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Locality"
-                android:textColor="@color/muted_grey"
-                geekui:customTypeface="fonts/CoreSansDBold.otf"
-                android:textSize="@dimen/small_text"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:textSize="@dimen/medium_text"
-                android:textColor="@color/colorPrimary"
-                android:inputType="text"
-                android:singleLine="true"/>
-
-
-        </LinearLayout>
-
-
 
 
     </LinearLayout>
@@ -159,12 +89,13 @@
         <views.textview.TypefaceTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Address (Area And Street)"
+            android:text="Company/House Number"
             android:textColor="@color/muted_grey"
             geekui:customTypeface="fonts/CoreSansDBold.otf"
             android:textSize="@dimen/small_text"/>
 
         <EditText
+            android:id="@+id/ed_company"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -175,6 +106,85 @@
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/grey_round_corner"
+        android:padding="@dimen/_5sdp"
+        android:layout_margin="@dimen/_5sdp">
+
+
+
+        <views.textview.TypefaceTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address 1 (Area)"
+            android:textColor="@color/muted_grey"
+            geekui:customTypeface="fonts/CoreSansDBold.otf"
+            android:textSize="@dimen/small_text"/>
+
+        <EditText
+            android:id="@+id/ed_address1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textSize="@dimen/medium_text"
+            android:textColor="@color/colorPrimary"
+            android:inputType="text"
+            android:singleLine="true"/>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/grey_round_corner"
+            android:padding="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_5sdp">
+
+            <views.textview.TypefaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address 2(Street)"
+                android:textColor="@color/muted_grey"
+                geekui:customTypeface="fonts/CoreSansDBold.otf"
+                android:textSize="@dimen/small_text"/>
+
+            <EditText
+                android:id="@+id/ed_address2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/colorPrimary"
+                android:inputType="text"
+                android:singleLine="true"/>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -200,6 +210,7 @@
                 android:textSize="@dimen/small_text"/>
 
             <EditText
+                android:id="@+id/ed_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
@@ -229,6 +240,7 @@
                 android:textSize="@dimen/small_text"/>
 
             <EditText
+                android:id="@+id/ed_state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
@@ -264,18 +276,19 @@
             <views.textview.TypefaceTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Landmark (Optional)"
+                android:text="Pin Code"
                 android:textColor="@color/muted_grey"
                 geekui:customTypeface="fonts/CoreSansDBold.otf"
                 android:textSize="@dimen/small_text"/>
 
             <EditText
+                android:id="@+id/ed_pin_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:textSize="@dimen/medium_text"
                 android:textColor="@color/colorPrimary"
-                android:inputType="text"
+                android:inputType="number"
                 android:singleLine="true"/>
 
 
@@ -293,18 +306,19 @@
             <views.textview.TypefaceTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Alternate Phone (Optional)"
+                android:text="Fax"
                 android:textColor="@color/muted_grey"
                 geekui:customTypeface="fonts/CoreSansDBold.otf"
                 android:textSize="@dimen/small_text"/>
 
             <EditText
+                android:id="@+id/ed_fax"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:textSize="@dimen/medium_text"
                 android:textColor="@color/colorPrimary"
-                android:inputType="phone"
+                android:inputType="number"
                 android:singleLine="true"/>
 
 
@@ -333,22 +347,26 @@
             android:textSize="@dimen/small_text"/>
 
 
-        <RadioButton
+        <views.ToggleableRadioButton
+            android:id="@+id/default_billing_radio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Home(All Day Delivery)"
+            android:text="Default Billing Address"
             android:theme="@style/MyRadioButton"
-            android:layout_marginLeft="@dimen/_5sdp"/>
+            android:layout_marginLeft="@dimen/_5sdp"
+            />
 
 
-        <RadioButton
+        <views.ToggleableRadioButton
+            android:id="@+id/default_shipping_radio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Work(Delivery Between 9AM-6PM)"
+            android:text="Default Shipping Address"
             android:theme="@style/MyRadioButton"
-            android:layout_marginLeft="@dimen/_5sdp"/>
+            android:layout_marginLeft="@dimen/_5sdp"
+            />
 
     </LinearLayout>
 

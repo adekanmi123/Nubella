@@ -38,6 +38,7 @@
         android:layout_gravity="center"
         android:elevation="3dp"
         card_view:cardCornerRadius="4dp"
+        android:visibility="gone"
         android:foreground="?attr/selectableItemBackground">
 
                 <LinearLayout
@@ -112,7 +113,6 @@
             android:layout_gravity="center"
             android:elevation="3dp"
             card_view:cardCornerRadius="4dp"
-            android:layout_marginTop="@dimen/_5sdp"
             android:foreground="?attr/selectableItemBackground">
 
             <LinearLayout
@@ -126,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
-                    android:text="2."
+                    android:text="1."
                    android:padding="@dimen/_5sdp"
                     android:layout_gravity="center"/>
 
@@ -146,6 +146,7 @@
                         android:textSize="@dimen/small_text"/>
 
                     <views.textview.TypefaceTextView
+                        android:id="@+id/txt_default_address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/muted_grey"
@@ -209,7 +210,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
-                    android:text="3."
+                    android:text="2."
                     android:padding="@dimen/_5sdp"
                     android:layout_gravity="center"/>
 
@@ -229,6 +230,7 @@
                         android:textSize="@dimen/small_text"/>
 
                     <views.textview.TypefaceTextView
+                        android:id="@+id/checkout_items_count_total"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/muted_grey"
@@ -300,8 +302,32 @@
                     android:orientation="vertical"
                     android:layout_marginTop="@dimen/_5sdp">
 
-                <include layout="@layout/layout_price_details"/>
+                <!--<include layout="@layout/layout_price_details"/>-->
+                    <views.textview.TypefaceTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/medium_text"
+                        android:text="PRICE DETAILS"
+                        android:textColor="@color/muted_grey"
+                        android:padding="@dimen/_2sdp"
+                        geekui:customTypeface="fonts/CoreSansDRegular.otf"/>
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/muted_light_grey"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/ll_price_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_5sdp">
+
+
+
+                      </LinearLayout>
 
                 </LinearLayout>
 
@@ -344,7 +370,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
-                    android:text="4."
+                    android:text="3."
                     android:padding="@dimen/_5sdp"/>
 
                 <LinearLayout

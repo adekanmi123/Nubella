@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/circleindicator" />
+            <option value="$PROJECT_DIR$/sweet_alert" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

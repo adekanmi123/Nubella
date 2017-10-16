@@ -31,6 +31,20 @@
 
     <!--</android.support.design.widget.AppBarLayout>-->
 
+    <views.textview.TypefaceTextView
+        android:id="@+id/no_new_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NO ADDRESSES ADDED"
+        android:textColor="@color/muted_grey"
+        geekui:customTypeface="fonts/CoreSansDBold.otf"
+        android:textSize="@dimen/medium_text"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:padding="@dimen/_5sdp"
+        android:visibility="gone"/>
+
+
 
     <ScrollView
         android:layout_width="match_parent"
