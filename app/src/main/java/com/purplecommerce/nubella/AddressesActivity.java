@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -73,8 +74,6 @@ public class AddressesActivity extends BaseActivity {
 //            arrayList.add(false);
 //        }
 
-
-
         add_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,7 +105,7 @@ public class AddressesActivity extends BaseActivity {
                     if (checkResponse.getCode()==0){
                         GetUserAddresses();
                     }else {
-                        Toast.makeText(AddressesActivity.this, ""+checkResponse.getMsg(), Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(AddressesActivity.this, ""+checkResponse.getMsg(), Toast.LENGTH_SHORT).show();
                     }
 
                 }
@@ -323,7 +322,12 @@ public class AddressesActivity extends BaseActivity {
         }
     }
 
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        cartCount.SetCount(MainActivity.ItemCountOnCart);
+        return super.onPrepareOptionsMenu(menu);
 
+    }
 
 
 }

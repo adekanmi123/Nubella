@@ -8,6 +8,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -38,7 +39,6 @@ public class CheckoutActivity extends BaseActivity {
 
 
         init();
-
 
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -213,7 +213,12 @@ public class CheckoutActivity extends BaseActivity {
 
     }
 
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        cartCount.SetCount(MainActivity.ItemCountOnCart);
+        return super.onPrepareOptionsMenu(menu);
 
+    }
 
 
 }

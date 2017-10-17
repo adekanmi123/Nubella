@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -22,6 +23,7 @@ import com.purplecommerce.nubella.Adapters.CartItems_Recycle_Adapter;
 import com.purplecommerce.nubella.ApiManager.ApiManager;
 import com.purplecommerce.nubella.BaseActivity;
 import com.purplecommerce.nubella.CheckoutActivity;
+import com.purplecommerce.nubella.MainActivity;
 import com.purplecommerce.nubella.POJO_models.CartResponse;
 import com.purplecommerce.nubella.POJO_models.CheckResponse;
 import com.purplecommerce.nubella.POJO_models.CouponApplyResponse;
@@ -209,7 +211,7 @@ public class CartActivity extends BaseActivity {
 
                  apiManager.execution_method_get(GETCART , "/mobileapi/cart/getCartInfo");
                 }else if (checkResponse.getCode()==5){
-                    Toast.makeText(CartActivity.this, ""+checkResponse.getMsg(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CartActivity.this, "No user login !!", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -425,7 +427,12 @@ public class CartActivity extends BaseActivity {
 
     }
 
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        cartCount.SetCount(MainActivity.ItemCountOnCart);
+        return super.onPrepareOptionsMenu(menu);
 
+    }
 
 
 

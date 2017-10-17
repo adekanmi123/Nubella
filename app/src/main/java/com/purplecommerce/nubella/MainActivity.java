@@ -5,18 +5,28 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
 
+import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.androidnetworking.error.ANError;
+import com.google.gson.Gson;
+import com.purplecommerce.nubella.ApiManager.ApiManager;
 import com.purplecommerce.nubella.CartViews.CartActivity;
 import com.purplecommerce.nubella.Database.CategoryDBManager;
 import com.purplecommerce.nubella.Fragments.HomeFragment;
+import com.purplecommerce.nubella.POJO_models.CheckResponse;
+import com.purplecommerce.nubella.POJO_models.GetCartCountResponse;
 
 public class MainActivity extends BaseActivity {
 
 
     CategoryDBManager categoryDBManager ;
-
+    ApiManager apiManager ;
+   // CountOnCart countOnCart ;
+    static final String GETCARTCOUNTTAG = "getcartcount";
+    public static int ItemCountOnCart = 0 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +34,9 @@ public class MainActivity extends BaseActivity {
 //        setContentView(R.layout.activity_main);
 
         Init();
+
+     apiManager = new ApiManager(MainActivity.this , apifetcher);
+     apiManager.execution_method_get(GETCARTCOUNTTAG , "/mobileapi/cart/getQty");
 
        categoryDBManager = new CategoryDBManager(MainActivity.this);
 
@@ -92,7 +105,69 @@ public class MainActivity extends BaseActivity {
 //         Log.e("**Category","Size"+categoryDBManager.GetAllCategories().size());
 
 
+
+
+
     }
+
+
+    ApiManager.APIFETCHER apifetcher = new ApiManager.APIFETCHER() {
+        @Override
+        public void onAPIRunningState(int a) {
+
+        }
+
+        @Override
+        public void onFetchProgress(int progress) {
+
+        }
+
+        @Override
+        public void onFetchComplete(String script, String APINAME, Gson gson) {
+
+            if (APINAME.equals(GETCARTCOUNTTAG)){
+
+                CheckResponse checkResponse = new CheckResponse();
+                checkResponse = gson.fromJson(script ,CheckResponse.class);
+                if (checkResponse.getCode() == 5){
+                    Toast.makeText(MainActivity.this, "N0 user Login", Toast.LENGTH_SHORT).show();
+                }else {
+                    GetCartCountResponse countResponse = new GetCartCountResponse();
+                    countResponse = gson.fromJson(script , GetCartCountResponse.class);
+                    if (countResponse.getCode() == 0){
+                        ItemCountOnCart = countResponse.getModel().getNum();
+                        cartCount.SetCount(countResponse.getModel().getNum());
+
+                    }else {
+
+                    }
+                }
+
+
+
+            }
+
+        }
+
+        @Override
+        public void onFetchFailed(ANError error) {
+
+        }
+
+        @Override
+        public void WhichApi(String APINAME) {
+
+        }
+    };
+
+//    public interface CountOnCart {
+//
+//        void SetCount(int a);
+//
+//
+//    }
+
+
 
     @Override
     public void cartClick() {
@@ -102,7 +177,20 @@ public class MainActivity extends BaseActivity {
 
     }
 
+//    @Override
+//    public void SetCountOnCart(int a) {
+//        cart_item_count.setText("5");
+//        super.SetCountOnCart(a);
+//    }
 
+
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        searchView.setVisibility(View.VISIBLE);
+        search_item.setVisible(true);
+        return super.onPrepareOptionsMenu(menu);
+    }
 
     private void Init() {
         fragmentManager = getSupportFragmentManager();
